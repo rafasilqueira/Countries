@@ -1,6 +1,6 @@
 package com.example.countries.model
 
-import com.example.countries.dependencyInjection.DaggerApiComponent
+import com.example.countries.di.DaggerApiComponent
 import javax.inject.Inject
 
 

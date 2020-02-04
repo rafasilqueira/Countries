@@ -1,4 +1,4 @@
-package com.example.countries.dependencyInjection
+package com.example.countries.di
 
 import com.example.countries.model.CountriesAPI
 import com.example.countries.model.CountryService

@@ -20,6 +20,7 @@ import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import java.util.concurrent.Executor
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 class CountriesListViewModelTest {
 
@@ -54,6 +55,18 @@ class CountriesListViewModelTest {
         assertEquals(false, countriesListViewModel.isError.value)
         assertEquals(false, countriesListViewModel.loading.value)
 
+    }
+
+    @Test
+    fun getCountriesError() {
+        testSingle = Single.error(Throwable())
+        `when`(countryService.getCountries()).thenReturn(testSingle)
+
+        countriesListViewModel.refreshData()
+
+        assertEquals(null, countriesListViewModel.countries.value?.size)
+        assertEquals(true, countriesListViewModel.isError.value)
+        assertEquals(false, countriesListViewModel.loading.value)
     }
 
 

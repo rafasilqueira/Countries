@@ -2,7 +2,7 @@ package com.example.countries.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.countries.dependencyInjection.DaggerApiComponent
+import com.example.countries.di.DaggerApiComponent
 import com.example.countries.model.Country
 import com.example.countries.model.CountryService
 import io.reactivex.android.schedulers.AndroidSchedulers
